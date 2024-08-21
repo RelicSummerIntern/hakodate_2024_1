@@ -1,18 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('投稿一覧') }}
+            {{ __('検索結果') }}
         </h2>
     </x-slot>
 
     <div class="max-w-7xl mx-auto mt-10 px-4 sm:px-6 lg:px-8">
         <div class="my-4">
-            <a href="{{ route('post.create') }}" class="inline-block py-2 px-4 btn btn-primary text-decoration-none">
-                {{ __('投稿する') }}
-            </a>
-
-            <a href="{{ route('myposts') }}" class="inline-block ml-4 py-2 px-4 btn btn-secondary text-decoration-none">
-                {{ __('自分の投稿を確認する') }}
+            <a href="{{ route('detail') }}" class="inline-block py-2 px-4 btn btn-primary text-decoration-none">
+                {{ __('詳細を見る') }}
             </a>
         </div>
 
