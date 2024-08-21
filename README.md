@@ -38,7 +38,7 @@ docker-compose exec laravel.test npm run dev
 docker-compose stop
 ```
 
-## URL
+## URLを押下して正常に動いているか確認する
 サンプルアプリ：http://localhost/
 
 phpMyAdmin: http://localhost:8080/
@@ -59,4 +59,3 @@ docker-compose exec laravel.test php artisan clear-compiled
 # Laravel実行コンテナにログイン
 docker-compose exec laravel.test /bin/bash
 ```
-確認です
