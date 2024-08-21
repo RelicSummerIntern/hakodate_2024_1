@@ -16,7 +16,8 @@ docker run --rm \
     composer install
 
 # 以下は一つずつ実行してください
-docker-compose up -d
+docker-compose up -ddocker-compose exec laravel.test php artisan key:generate
+
 docker-compose exec laravel.test php artisan key:generate
 docker-compose exec laravel.test php artisan migrate:fresh
 docker-compose exec laravel.test npm install
@@ -32,7 +33,7 @@ docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## 停止する方法
+## 停止する時は下記のコマンドを実行する
 
 ```sh
 docker-compose stop
