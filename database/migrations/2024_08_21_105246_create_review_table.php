@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('users_id')->constrained('users')->onDelete('cascade'); // users_id (bigint)
+            $table->bigInteger('stores_id')->constrained('stores')->onDelete('cascade'); // stores_id (bigint)
+            $table->tinyInteger('rating');#評価
+            $table->String('comment',500);#コメント 最大500文字
             $table->timestamps();
+
         });
     }
 

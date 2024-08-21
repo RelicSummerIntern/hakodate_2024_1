@@ -12,8 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('stores', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // id
+            $table->string('storesname', 255); // 店名
+            $table->string('address', 255); // 住所
+            $table->string('phone_number', 255); // 電話番号
+            $table->string('opentime', 255); // 開店時間
+            $table->string('closetime', 255); // 閉店時間
+            $table->string('homepage_url')->nullable(); // ホームページのURL, nullable
+            $table->string('genre')->nullable(); // ジャンル, nullable
+            $table->string('photo')->nullable(); // 景観, nullable
+            $table->timestamps(); // created_at, updated_at (timestamp)
+
         });
     }
 
