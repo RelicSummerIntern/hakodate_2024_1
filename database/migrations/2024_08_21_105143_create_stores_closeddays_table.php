@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('stores_closeddays', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // id
+            $table->foreignId('stores_id')->constrained('stores')->onDelete('cascade'); // 外部キー制約
+            $table->foreignId('closeddays_id')->constrained('closeddays')->onDelete('cascade'); // 外部キー制約
+
         });
     }
 
