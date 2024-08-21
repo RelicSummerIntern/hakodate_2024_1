@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('closeddays', function (Blueprint $table) {
             $table->id();
+            $table->string('week');
             $table->timestamps();
+
         });
     }
 

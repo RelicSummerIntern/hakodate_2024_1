@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('stores_tags', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // id
+            $table->bigInteger('stores_id')->constrained('stores')->onDelete('cascade'); // stores_id (bigint)
+            $table->bigInteger('tags_id')->constrained('tags')->onDelete('cascade'); // tags_id (bigint)
         });
     }
 
