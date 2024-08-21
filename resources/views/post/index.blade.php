@@ -9,6 +9,7 @@
         <div class="my-4">
             <a href="{{ route('detail') }}" class="inline-block py-2 px-4 btn btn-primary text-decoration-none">
                 {{ __('詳細を見る') }}
+
             </a>
             <a href="{{ route('post.create') }}" class="inline-block py-2 px-4 btn btn-primary text-decoration-none">
                 {{ __('お店を投稿する') }}
@@ -16,6 +17,7 @@
 
             <a href="{{ route('myposts') }}" class="inline-block ml-4 py-2 px-4 btn btn-secondary text-decoration-none">
                 {{ __('自分の投稿を確認する') }}
+                
             </a>
         </div>
 
