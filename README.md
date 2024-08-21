@@ -16,7 +16,7 @@ docker run --rm \
     composer install
 
 # 以下は一つずつ実行してください
-docker-compose up -ddocker-compose exec laravel.test php artisan key:generate
+docker-compose up -docker-compose exec laravel.test php artisan key:generate
 
 docker-compose exec laravel.test php artisan key:generate
 docker-compose exec laravel.test php artisan migrate:fresh
