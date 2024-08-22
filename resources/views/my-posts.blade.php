@@ -14,18 +14,18 @@
 
         @if (!empty($posts))
             <div class="grid grid-cols-1 gap-4">
-                @foreach ($posts as $post)
+                @foreach ($stores as $store)
                     <div class="bg-white shadow p-6 rounded-lg">
-                        <h4 class="text-lg font-bold">{{ $post->title }}</h4>
-                        <p class="text-gray-800">{{ $post->body }}</p>
-                        <p class="text-gray-800">{{ $post->updated_at }}</p>
+                        <h4 class="text-lg font-bold">{{ $store->title }}</h4>
+                        <p class="text-gray-800">{{ $store->body }}</p>
+                        <p class="text-gray-800">{{ $store->updated_at }}</p>
 
                         <div class="mt-4 flex">
-                            <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="btn btn-primary mr-2"
+                            <a href="{{ route('post.edit', ['id' => $store->id]) }}" class="btn btn-primary mr-2"
                                 role="button">
                                 {{ __('編集') }}
                             </a>
-                            <form action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
+                            <form action="{{ route('post.destroy', ['id' => $store->id]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？')">
