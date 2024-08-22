@@ -35,6 +35,17 @@
                     <p class="text-gray-600">住所: {{ $store->address }}</p>
                     <p class="text-gray-600">電話番号: {{ $store->phone_number }}</p>
                     <p class="text-gray-600">開店時間: {{ $store->opentime }} - 閉店時間: {{ $store->closetime }}</p>
+                    <!-- 定休日 -->
+                    @if($store->closeddays->isNotEmpty())
+                        <p class="text-gray-600">定休日: 
+                            @foreach($store->closeddays as $closedday)
+                                {{ $closedday->week }}@if(!$loop->last), @endif
+                            @endforeach
+                        </p>
+                    @else
+                        <p class="text-gray-600">定休日はありません。</p>
+                    @endif
+
                     @if($store->homepage_url)
                         <p class="text-gray-600">ホームページ: <a href="{{ $store->homepage_url }}" target="_blank" class="text-blue-500">{{ $store->homepage_url }}</a></p>
                     @endif
