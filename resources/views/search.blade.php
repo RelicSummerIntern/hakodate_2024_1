@@ -16,7 +16,7 @@
                                 <div class="p-2">
                                     <label class="inline-flex items-center">
                                         <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
-                                        <span class="ml-2 text-gray-700">{{ $tag->name }}</span>
+                                        <span class="ml-2 text-gray-700">{{ $tag->tagname }}</span>
                                     </label>
                                 </div>
                             @endforeach
@@ -53,3 +53,6 @@
         </div>
     </div>
 </x-app-layout>
+
+
+
