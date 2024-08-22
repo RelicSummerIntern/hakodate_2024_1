@@ -11,7 +11,7 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function search()
+    public function index()
     {
         return view('search');
     }

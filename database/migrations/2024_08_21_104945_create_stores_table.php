@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('homepage_url')->nullable(); // ホームページのURL, nullable
             $table->string('genre')->nullable(); // ジャンル, nullable
             $table->string('photo')->nullable(); // 景観, nullable
+            $table->BigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps(); // created_at, updated_at (timestamp)
 
         });

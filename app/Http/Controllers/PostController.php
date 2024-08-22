@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,8 +10,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('updated_at', 'desc')->get();
-        return view('post.index', compact('posts'));
+        $stores = Store::orderBy('updated_at', 'desc')->get();
+        return view('post.index', compact('stores'));
     }
 
     public function create()
@@ -22,50 +22,54 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'storesname' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'access' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:255',
+            'opentime' => 'required|string|max:255',
+            'closetime' => 'required|string|max:255',
+            'tag' => 'required|string|max:255',
+            'homepage_url' => 'required|string|max:255',
+            'genre' => 'required|string|max:255'
         ]);
 
-        $post = new Post();
-        $post->title = $validatedData['title'];
-        $post->body = $validatedData['body'];
-        $post->user_id = Auth::id();
-        $post->save();
+        $store = new Store();
+        $store->create($validatedData);
 
         return redirect()->route('post.index')->with('success', '投稿が作成されました');
     }
 
     public function myPosts()
     {
-        $posts = Post::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
-        return view('my-posts', compact('posts'));
+        $stores = Store::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
+        return view('my-posts', compact('stores'));
     }
 
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        return view('post.edit', compact('post'));
+        $store = Store::findOrFail($id);
+        return view('post.edit', compact('store'));
     }
 
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'storesname' => 'required|string|max:255',
+            'address' => 'required|string|max255',
         ]);
 
-        $post = Post::findOrFail($id);
-        $post->title = $validatedData['title'];
-        $post->body = $validatedData['body'];
-        $post->save();
+        $store = Store::findOrFail($id);
+        $store->storesname = $validatedData['storesname'];
+        $store->address = $validatedData['address'];
+        $store->save();
 
         return redirect()->route('myposts')->with('success', '投稿が更新されました');
     }
 
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
-        $post->delete();
+        $store = Store::findOrFail($id);
+        $store->delete();
 
         return redirect()->route('myposts')->with('success', '投稿が削除されました');
     }

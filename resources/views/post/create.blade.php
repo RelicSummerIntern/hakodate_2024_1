@@ -11,12 +11,12 @@
                 <form action="{{ route('post.store') }}" method="post">
                     @csrf
                     <div class="mb-4">
-                        <label for="storename" class="block text-gray-700 text-sm font-bold mb-2">店名</label>
-                        <input type="text" name="storename" id="storename" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="storesname" class="block text-gray-700 text-sm font-bold mb-2">店名</label>
+                        <input type="text" name="storesname" id="storesname" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
-                        <label for="storename" class="block text-gray-700 text-sm font-bold mb-2">住所</label>
-                        <input type="text" name="adress" id="adress" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="address" class="block text-gray-700 text-sm font-bold mb-2">住所</label>
+                        <input type="text" name="address" id="address" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
                         <label for="access" class="block text-gray-700 text-sm font-bold mb-2">アクセス</label>
@@ -31,11 +31,11 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex flex-col">
                                 <label for="opentime" class="block text-gray-700 text-sm font-bold mb-2">開店</label>
-                                <input type="time" name="opentime" id="opentime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" step="900">
+                                <input type="time" name="opentime" id="opentime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col">
                                 <label for="closetime" class="block text-gray-700 text-sm font-bold mb-2">閉店</label>
-                                <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" step="900">
+                                <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col ml-8">
                                 <span class="block text-gray-700 text-sm font-bold mb-2">定休日</span>
@@ -81,20 +81,20 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label for="title" class="block text-gray-700 text-sm font-bold mb-2">タグ</label>
-                        <input type="text" name="title" id="title" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">タグ</label>
+                        <input type="text" name="tag" id="tag" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
-                        <label for="title" class="block text-gray-700 text-sm font-bold mb-2">URL (HP, SNS等)</label>
-                        <input type="url" name="title" id="title" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="homepage_url" class="block text-gray-700 text-sm font-bold mb-2">URL (HP, SNS等)</label>
+                        <input type="url" name="homepage_url" id="homepage_url" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
-                        <label for="title" class="block text-gray-700 text-sm font-bold mb-2">ジャンル</label>
-                        <input type="text" name="title" id="title" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">ジャンル</label>
+                        <input type="text" name="genre" id="genre" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
-                        <label for="title" class="block text-gray-700 text-sm font-bold mb-2">写真</label>
-                        <input type="file" name="title" id="title" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="photo" class="block text-gray-700 text-sm font-bold mb-2">写真</label>
+                        <input type="file" name="photo" id="photo" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
 
                     <div class="flex justify-end">

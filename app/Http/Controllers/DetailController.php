@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
 {

@@ -10,7 +10,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body mt-4">
-                        <form method="POST" action="{{ route('post.update', $post->id) }}">
+                        <form method="POST" action="{{ route('post.update', $store->id) }}">
                             @csrf
                             @method('PATCH')
 
@@ -18,7 +18,7 @@
                                 <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('タイトル') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $post->title) }}" required autocomplete="title" autofocus>
+                                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $store->title) }}" required autocomplete="title" autofocus>
 
                                     @error('title')
                                         <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                                 <label for="body" class="col-md-4 col-form-label text-md-right">{{ __('本文') }}</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="body" class="form-control @error('body') is-invalid @enderror" name="body" required>{{ old('body', $post->body) }}</textarea>
+                                    <textarea id="body" class="form-control @error('body') is-invalid @enderror" name="body" required>{{ old('body', $store->body) }}</textarea>
 
                                     @error('body')
                                         <span class="invalid-feedback" role="alert">
