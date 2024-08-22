@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -16,7 +17,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('post.create');
+        $tags = Tag::all();
+        return view('post.create', compact('tags'));
     }
 
     public function store(Request $request)
@@ -28,15 +30,14 @@ class PostController extends Controller
             'phone_number' => 'required|string|max:255',
             'opentime' => 'required|string|max:255',
             'closetime' => 'required|string|max:255',
-            'tag' => 'required|string|max:255',
             'homepage_url' => 'required|string|max:255',
             'genre' => 'required|string|max:255'
         ]);
 
         $store = new Store();
-        $store->create($validatedData);
+        $store->create($request->input())->tags()->attach($request->input('tags'));
 
-        return redirect()->route('post.index')->with('success', '投稿が作成されました');
+        return redirect()->route('home')->with('success', '投稿が作成されました');
     }
 
     public function myPosts()
