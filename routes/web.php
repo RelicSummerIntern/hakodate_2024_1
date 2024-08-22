@@ -25,10 +25,6 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/search', [StoreController::class, 'search'])->name('search');
-
-Route::get('/detail/{id}', [StoreController::class, 'show'])->name('detail');
-
 //authミドルウェアは、ユーザーが認証されていない場合、ログインページにリダイレクトするように設定されています。
 Route::middleware('auth')->group(function () {
     // プロフィール編集関連のルート
@@ -48,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 
     // 検索関連のルート
+    Route::get('/search', [StoreController::class, 'search'])->name('search');
+    Route::get('/detail/{id}', [StoreController::class, 'show'])->name('detail');
 });
 
 require __DIR__.'/auth.php';

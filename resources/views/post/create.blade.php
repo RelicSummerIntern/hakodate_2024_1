@@ -82,7 +82,14 @@
                     </div>
                     <div class="mb-4">
                         <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">タグ</label>
-                        <input type="text" name="tag" id="tag" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                            <div class="p-2">
+                                @foreach ($tags as $tag)
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
+                                        <span class="ml-2 text-gray-700">{{ $tag->tagname }}</span>
+                                    </label>
+                                @endforeach
+                            </div>
                     </div>
                     <div class="mb-4">
                         <label for="homepage_url" class="block text-gray-700 text-sm font-bold mb-2">URL (HP, SNS等)</label>
@@ -99,7 +106,7 @@
 
                     <div class="flex justify-end">
                         <button type="submit" class="py-2 px-4 btn btn-primary">投稿する</button>
-                        <a href="{{ route('post.index') }}" class="py-2 px-4 ml-4 btn btn-secondary">キャンセル</a>
+                        <a href="{{ route('home') }}" class="py-2 px-4 ml-4 btn btn-secondary">キャンセル</a>
                     </div>
                 </form>
             </div>

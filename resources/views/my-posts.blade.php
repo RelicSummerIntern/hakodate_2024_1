@@ -12,12 +12,12 @@
             </a>
         </div>
 
-        @if (!empty($posts))
+        @if (!empty($stores))
             <div class="grid grid-cols-1 gap-4">
                 @foreach ($stores as $store)
                     <div class="bg-white shadow p-6 rounded-lg">
-                        <h4 class="text-lg font-bold">{{ $store->title }}</h4>
-                        <p class="text-gray-800">{{ $store->body }}</p>
+                        <h4 class="text-lg font-bold">{{ $store->storesname }}</h4>
+                        <p class="text-gray-800">{{ $store->address }}</p>
                         <p class="text-gray-800">{{ $store->updated_at }}</p>
 
                         <div class="mt-4 flex">
