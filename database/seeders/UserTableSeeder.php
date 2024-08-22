@@ -27,6 +27,19 @@ class UserTableSeeder extends Seeder
             "photo" => "https://farm3.static.flickr.com/2469/4020702654_ac0a6d638e_o.jpg",#3688×2592 jpeg
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
+            ],
+
+            ['id' => 2, 
+            'storesname' => 'name2', 
+            'address' => "五稜郭", 
+            'phone_number' => '111111111',
+            "opentime" => "9:00",
+            "closetime" => "18:00",
+            "homepage_url" => "https://",
+            "genre" => "イタリアン",
+            "photo" => "https://farm3.static.flickr.com/2693/4053077192_52b2165fe8_o.jpg",#jpeg
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
             ]
         ]);
 
@@ -44,12 +57,19 @@ class UserTableSeeder extends Seeder
         
         DB::table('tags')->insert([
             ['id' => 1, 'tagname' => 'イカ', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['id' => 2, 'tagname' => 'ブリ', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ['id' => 2, 'tagname' => 'ブリ', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 3, 'tagname' => 'エビ', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
         ]);
 
         DB::table('stores_closeddays')->insert([
             ['id' => 1, 'stores_id' => 1, 'closeddays_id' => 1],
             ['id' => 2, 'stores_id' => 1, 'closeddays_id' => 2]
+        ]);
+
+        DB::table('stores_tags')->insert([
+            ['id' => 1, 'stores_id' => 1, 'tags_id' => 1],
+            ['id' => 2, 'stores_id' => 1, 'tags_id' => 2],
+            ['id' => 3, 'stores_id' => 2, 'tags_id' => 2]
         ]);
 
     }

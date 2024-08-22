@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +25,9 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/search', function () {
-    return view('search');
-})->name('search');
+Route::get('/search', [StoreController::class, 'search'])->name('search');
 
-Route::get('/detail', function () {
-    return view('detail');
-})->name('detail');
+Route::get('/detail/{id}', [StoreController::class, 'show'])->name('detail');
 
 //authミドルウェアは、ユーザーが認証されていない場合、ログインページにリダイレクトするように設定されています。
 Route::middleware('auth')->group(function () {
