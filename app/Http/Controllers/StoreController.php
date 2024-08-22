@@ -29,7 +29,10 @@ class StoreController extends Controller
 
     public function show($id)
     {
-        $store = Store::findOrFail($id);
+        // 'with'メソッドを使って 'tags' と 'closedDays' リレーションをロードする
+        $store = Store::with(['tags', 'closeddays'])->findOrFail($id);
+
+        // 'store.show' ビューに 'store' を渡す
         return view('detail', compact('store'));
     }
 }

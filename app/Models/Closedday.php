@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Closedday extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['week'];
+
+    public function stores()
+    {
+        return $this->belongsToMany(Store::class, 'stores_closeddays', 'closeddays_id', 'stores_id');
+    }
+}
