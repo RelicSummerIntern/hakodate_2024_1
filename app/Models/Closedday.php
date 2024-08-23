@@ -13,6 +13,6 @@ class Closedday extends Model
 
     public function stores()
     {
-        return $this->belongsToMany(Store::class, 'stores_closeddays', 'closeddays_id', 'stores_id');
+        return $this->belongsToMany(Store::class);
     }
 }

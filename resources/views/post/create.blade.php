@@ -38,45 +38,14 @@
                                 <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col ml-8">
-                                <span class="block text-gray-700 text-sm font-bold mb-2">定休日</span>
-                                <div class="flex space-x-2">
+                            <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
+                            <div class="p-2">
+                                @foreach ($closeddays as $closedday)
                                     <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="monday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">月</span>
+                                        <input type="checkbox" name="closeddays[]" value="{{ $closedday->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
+                                        <span class="ml-2 text-gray-700">{{ $closedday->week }}</span>
                                     </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="tuesday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">火</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="wednesday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">水</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="thursday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">木</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="friday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">金</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="saturday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">土</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="sunday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">日</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="holiday" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">祝</span>
-                                    </label>
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays" value="irregular" class="form-checkbox text-indigo-600">
-                                        <span class="ml-2">不定休</span>
-                                    </label>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ use App\Models\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tag;
+use App\Models\Closedday;
 
 class PostController extends Controller
 {
@@ -18,7 +19,8 @@ class PostController extends Controller
     public function create()
     {
         $tags = Tag::all();
-        return view('post.create', compact('tags'));
+        $closeddays = Closedday::all();
+        return view('post.create', compact('tags', 'closeddays'));
     }
 
     public function store(Request $request)

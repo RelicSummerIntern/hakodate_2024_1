@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Store;
 use App\Models\Tag;
+use App\Models\Closedday;
 
 class StoreController extends Controller
 {

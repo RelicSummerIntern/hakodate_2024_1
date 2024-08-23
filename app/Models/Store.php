@@ -19,7 +19,7 @@ class Store extends Model
         return $this->belongsToMany(Tag::class, 'stores_tags', 'stores_id', 'tags_id');
     }
 
-    public function closedDays()
+    public function closeddays()
     {
         return $this->belongsToMany(Closedday::class, 'stores_closeddays', 'stores_id', 'closeddays_id');
     }
