@@ -30,9 +30,10 @@ class PostController extends Controller
         $path = $file->store('public/photo');
         $input['photo'] = $path;
         $store = new Store();
-        $store->create($input)->tags()->attach($request->input('tags'));
-        $store->create($input)->closeddays()->attach($request->input('closeddays'));
-
+        $store = Store::create($input);
+        $store->tags()->attach($request->input('tags'));
+        $store->closeddays()->attach($request->input('closeddays'));
+        
         return redirect()->route('home')->with('success', '投稿が作成されました');
     }
 
