@@ -38,7 +38,7 @@
                                 <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col ml-8">
-                                <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
+<label for="closeddays" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
                                 <div class="p-2">
                                     @foreach ($closeddays as $closedday)
                                         <label class="inline-flex items-center">
@@ -50,17 +50,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-4">
-                        <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">タグ</label>
-                            <div class="p-2">
-                                @foreach ($tags as $tag)
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
-                                        <span class="ml-2 text-gray-700">{{ $tag->tagname }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                    </div>
+                    <!-- 既存のタグチェックボックス -->
+<div class="mb-4">
+    <label for="tags" class="block text-gray-700 text-sm font-bold mb-2">タグ</label>
+    <div class="p-2">
+        @foreach ($tags as $tag)
+            <label class="inline-flex items-center">
+                <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
+                <span class="ml-2 text-gray-700">{{ $tag->tagname }}</span>
+            </label>
+        @endforeach
+    </div>
+</div>
+<!-- 新規タグ入力フォーム -->
+<div class="mb-4">
+    <label for="new_tags" class="block text-gray-700 text-sm font-bold mb-2">新規タグ (カンマで区切る)</label>
+    <input type="text" name="new_tags" id="new_tags" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" placeholder="例: タグ1, タグ2, タグ3">
+</div>
+
                     <div class="mb-4">
                         <label for="homepage_url" class="block text-gray-700 text-sm font-bold mb-2">URL (HP, SNS等)</label>
                         <input type="url" name="homepage_url" id="homepage_url" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
