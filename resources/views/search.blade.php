@@ -37,11 +37,11 @@
                         @forelse ($stores as $store)
                             <div class="border-b border-gray-200 py-4">
                                 <h3 class="text-lg font-semibold">{{ $store->storename }}</h3>
+                                <img src="{{ asset(str_replace( 'public/', 'storage/', $store->photo)) }}" alt="Store Photo" class="mt-2 max-w-xs">
                                 <p class="text-gray-600">{{ $store->address }}</p>
                                 <p class="text-gray-600">電話番号: {{ $store->phone_number }}</p>
                                 <p class="text-gray-600">開店時間: {{ $store->opentime }} - 閉店時間: {{ $store->closetime }}</p>
                                 <a href="{{ $store->homepage_url }}" target="_blank" class="text-blue-500">ホームページ</a>
-                                <img src="{{ $store->photo }}" alt="Store Photo" class="mt-2 max-w-xs">
                                 <a href="{{ route('detail', ['id' => $store->id]) }}" class="text-blue-500">詳細</a>
                             </div>
                         @empty

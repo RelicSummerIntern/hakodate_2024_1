@@ -14,7 +14,7 @@
 
                     <!-- 店舗画像 -->
                     @if($store->photo)
-                        <img src="{{ $store->photo }}" alt="{{ $store->storesname }}" class="mb-4 max-w-full h-auto">
+                        <img src="{{ asset(str_replace( 'public/', 'storage/', $store->photo)) }}" alt="{{ $store->storesname }}" class="mb-4 max-w-full h-auto">
                     @else
                         <p class="text-gray-600 mb-4">画像はありません。</p>
                     @endif

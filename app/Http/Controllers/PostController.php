@@ -23,19 +23,13 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'storesname' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'access' => 'required|string|max:255',
-            'phone_number' => 'required|string|max:255',
-            'opentime' => 'required|string|max:255',
-            'closetime' => 'required|string|max:255',
-            'homepage_url' => 'required|string|max:255',
-            'genre' => 'required|string|max:255'
-        ]);
-
+        $input = $request->all();
+        $file = $request->file('photo');
+        $path = $file->store('public/photo');
+        $input['photo'] = $path;
         $store = new Store();
-        $store->create($request->input())->tags()->attach($request->input('tags'));
+        $store->create($input)->tags()->attach($request->input('tags'));
+        $store->create($input)->closeddays()->attach($request->input('closeddays'));
 
         return redirect()->route('home')->with('success', '投稿が作成されました');
     }
