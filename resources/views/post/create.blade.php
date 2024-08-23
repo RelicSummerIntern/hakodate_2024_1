@@ -19,10 +19,6 @@
                         <input type="text" name="address" id="address" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
                     <div class="mb-4">
-                        <label for="access" class="block text-gray-700 text-sm font-bold mb-2">アクセス</label>
-                        <input type="text" name="access" id="access" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
-                    </div>
-                    <div class="mb-4">
                         <label for="phone_number" class="block text-gray-700 text-sm font-bold mb-2">電話番号</label>
                         <input type="text" name="phone_number" id="phone_number" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
@@ -38,7 +34,7 @@
                                 <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col ml-8">
-<label for="closeddays" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
+                                <label for="closeddays" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
                                 <div class="p-2">
                                     @foreach ($closeddays as $closedday)
                                         <label class="inline-flex items-center">

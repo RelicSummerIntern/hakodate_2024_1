@@ -22,7 +22,7 @@
                     <!-- 紐づけられたタグ -->
                     @if($store->tags->isNotEmpty())
                         <div class="mb-4">
-                            <h4 class="text-lg font-semibold">タグ:</h4>
+                            <h4 class="text-base font-semibold">タグ</h4>
                             <ul class="list-disc pl-5">
                                 @foreach($store->tags as $tag)
                                     <li class="text-gray-600">{{ $tag->tagname }}</li>
@@ -32,27 +32,27 @@
                     @endif
 
                     <!-- 店舗情報 -->
-                    <p class="text-gray-600">住所: {{ $store->address }}</p>
-                    <p class="text-gray-600">電話番号: {{ $store->phone_number }}</p>
-                    <p class="text-gray-600">開店時間: {{ $store->opentime }} - 閉店時間: {{ $store->closetime }}</p>
+                    <p><span class="font-semibold">住所 :</span> <span class="text-gray-600">{{ $store->address }}</span></p>
+                    <p><span class="font-semibold">電話番号 :</span> <span class="text-gray-600">{{ $store->phone_number }}</span></p>
+                    <p><span class="font-semibold">開店時間 :</span> <span class="text-gray-600">{{ $store->opentime }} -</span> <span class="font-semibold">閉店時間 :</span> <span class="text-gray-600">{{ $store->closetime }}</span></p>
                     <!-- 定休日 -->
                     @if($store->closeddays->isNotEmpty())
-                        <p class="text-gray-600">定休日: 
+                        <p><span class="font-semibold">定休日 :</span> <span class="test-gray-600"> 
                             @foreach($store->closeddays as $closedday)
                                 {{ $closedday->week }}@if(!$loop->last), @endif
                             @endforeach
-                        </p>
+                        </span></p>
                     @else
                         <p class="text-gray-600">定休日はありません。</p>
                     @endif
 
                     @if($store->homepage_url)
-                        <p class="text-gray-600">ホームページ: <a href="{{ $store->homepage_url }}" target="_blank" class="text-blue-500">{{ $store->homepage_url }}</a></p>
+                        <p><span class="font-semibold">ホームページ :</span> <a href="{{ $store->homepage_url }}" target="_blank" class="text-blue-500">{{ $store->homepage_url }}</a></p>
                     @endif
 
                     <!-- ジャンル -->
                     @if($store->genre)
-                        <p class="text-gray-600">ジャンル: {{ $store->genre }}</p>
+                        <p><span class="font-semibold">ジャンル :</span> <span class="text-gray-600">{{ $store->genre }}</span></p>
                     @endif
 
                     <!-- 戻るボタン -->
