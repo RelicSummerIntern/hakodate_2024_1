@@ -38,14 +38,15 @@
                                 <input type="time" name="closetime" id="closetime" class="w-24 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500">
                             </div>
                             <div class="flex flex-col ml-8">
-                            <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
-                            <div class="p-2">
-                                @foreach ($closeddays as $closedday)
-                                    <label class="inline-flex items-center">
-                                        <input type="checkbox" name="closeddays[]" value="{{ $closedday->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
-                                        <span class="ml-2 text-gray-700">{{ $closedday->week }}</span>
-                                    </label>
-                                @endforeach
+                                <label for="tag" class="block text-gray-700 text-sm font-bold mb-2">定休日</label>
+                                <div class="p-2">
+                                    @foreach ($closeddays as $closedday)
+                                        <label class="inline-flex items-center">
+                                            <input type="checkbox" name="closeddays[]" value="{{ $closedday->id }}" class="form-checkbox h-5 w-5 text-indigo-600">
+                                            <span class="ml-2 text-gray-700">{{ $closedday->week }}</span>
+                                        </label>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
