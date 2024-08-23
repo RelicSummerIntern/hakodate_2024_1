@@ -59,7 +59,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-center">
                 <!-- 戻るボタン -->
-                <button onclick="history.back()" class="bg-gray-500 text-white py-2 px-4 rounded">
+                <button onclick="window.location.href='{{ route('home') }}'" class="bg-gray-500 text-white py-2 px-4 rounded">
                     戻る
                 </button>
             </div>
